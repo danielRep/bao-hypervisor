@@ -2,7 +2,6 @@
 #define VTIMER_H
 
 #include <bao.h>
-
 #define VTIMER_IRQ_ID (15)
 
 struct vtimer {
@@ -13,10 +12,11 @@ struct vtimer {
 };
 
 struct vtimer;
+struct vcpu;
 
 void vtimer_init(struct vtimer* vtimer);
 void vtimer_reset(struct vtimer* vtimer);
 void vtimer_save_state(struct vtimer* vtimer);
-void vtimer_restore_state(struct vtimer* vtimer);
+void vtimer_restore_state(struct vcpu* vcpu, struct vtimer* vtimer);
 
 #endif /* VTIMER_H */

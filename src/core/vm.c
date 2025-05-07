@@ -453,4 +453,6 @@ void vcpu_context_switch(void)
     }
     vcpu_restore_state(cpu()->next_vcpu);
     cpu()->vcpu = cpu()->next_vcpu;
+
+    console_printk("sw\n");
 }
